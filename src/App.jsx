@@ -24,7 +24,7 @@ function App() {
     
     // Create the payerdata object with user input
     const payerData = {
-      "discord-username": formData.discordUsername,
+      "discord": formData.discordUsername,
       "email": formData.email,
       "nostr": formData.nostrNpub
     }
@@ -34,7 +34,7 @@ function App() {
     const params = new URLSearchParams({
       amount: '1500',
       recipient: 'rightshift@getalby.com',
-      timeframe: '30 days',
+      timeframe: '1 days',
       comment: '',
       payerdata: JSON.stringify(payerData),
       returnUrl: 'https://rightshift.to'
@@ -48,6 +48,7 @@ function App() {
     <>
       <div className="form-container">
         <h1>Welcome to Rightshift Community</h1>
+        <p className="helper-text">หากคุณไม่มี Discord หรือ Nostr, โปรดใส่ "-" ในช่องนั้น</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="discordUsername">Discord Username:</label>
@@ -57,9 +58,10 @@ function App() {
               name="discordUsername"
               value={formData.discordUsername}
               onChange={handleInputChange}
-              placeholder="Enter your Discord username"
+              placeholder="ป้อนชื่อผู้ใช้ Discord หรือ '-' ถ้าไม่มี"
               required
             />
+            <small className="input-help">ไม่มี Discord? ป้อน "-"</small>
           </div>
 
           <div className="form-group">
@@ -70,7 +72,7 @@ function App() {
               name="email"
               value={formData.email}
               onChange={handleInputChange}
-              placeholder="Enter your email"
+              placeholder="ป้อนอีเมลของคุณ"
               required
             />
           </div>
@@ -83,12 +85,13 @@ function App() {
               name="nostrNpub"
               value={formData.nostrNpub}
               onChange={handleInputChange}
-              placeholder="Enter your Nostr npub"
+              placeholder="ป้อน Nostr npub ของคุณ หรือ '-' ถ้าไม่มี"
               required
             />
+            <small className="input-help">ไม่มี Nostr? ป้อน "-"</small>
           </div>
 
-          <button type="submit">Submit</button>
+          <button type="submit">submit</button>
         </form>
       </div>
     </>
