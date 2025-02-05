@@ -34,7 +34,7 @@ function App() {
     const params = new URLSearchParams({
       amount: '1500',
       recipient: 'rightshift@getalby.com',
-      timeframe: '1 days',
+      timeframe: '30 days',
       comment: '',
       payerdata: JSON.stringify(payerData),
       returnUrl: 'https://rightshift.to'
