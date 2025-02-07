@@ -77,3 +77,27 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #535bf2;
 }
+
+.helper-text {
+  margin-bottom: 20px;
+  color: #666;
+  text-align: center;
+}
+
+.input-help {
+  display: block;
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 4px;
+}
+
+.discord-help-link {
+  display: block;
+  margin-bottom: 8px;
+  color: #7289da; /* Discord's brand color */
+  text-decoration: underline;
+}
+
+.discord-help-link:hover {
+  color: #5b6eae;
+}
