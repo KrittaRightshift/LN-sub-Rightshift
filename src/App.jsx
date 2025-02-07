@@ -34,7 +34,7 @@ function App() {
     const params = new URLSearchParams({
       amount: '1500',
       recipient: 'rightshift@getalby.com',
-      timeframe: '30 days',
+      timeframe: '1 days',
       comment: '',
       payerdata: JSON.stringify(payerData),
       returnUrl: 'https://rightshift.to'
@@ -51,6 +51,14 @@ function App() {
         <p className="helper-text">หากคุณไม่มี Discord หรือ Nostr, โปรดใส่ "-" ในช่องนั้น</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
+            <a 
+              href="https://support.discord.com/hc/th/articles/360033931551-การเริ-มต-นใช-งาน"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="discord-help-link"
+            >
+              วิธีการสมัครใช้งานดิสคอร์ด
+            </a>
             <label htmlFor="discordUsername">Discord Username:</label>
             <input
               type="text"
