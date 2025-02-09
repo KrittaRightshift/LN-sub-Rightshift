@@ -10,6 +10,7 @@ function App() {
     email: '',
     nostrNpub: ''
   })
+  const [isChecked, setIsChecked] = useState(false)
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -19,8 +20,17 @@ function App() {
     }))
   }
 
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    
+    if (!isChecked) {
+      alert("กรุณายอมรับเงื่อนไขก่อนส่งแบบฟอร์ม")
+      return
+    }
     
     // Create the payerdata object with user input
     const payerData = {
@@ -34,7 +44,7 @@ function App() {
     const params = new URLSearchParams({
       amount: '1500',
       recipient: 'rightshift@getalby.com',
-      timeframe: '1 days',
+      timeframe: '30 days',
       comment: '',
       payerdata: JSON.stringify(payerData),
       returnUrl: 'https://rightshift.to'
@@ -97,6 +107,18 @@ function App() {
               required
             />
             <small className="input-help">ไม่มี Nostr? ป้อน "-"</small>
+          </div>
+
+          <div className="form-group">
+            <input
+              type="checkbox"
+              id="autoPaymentWarning"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+            <label htmlFor="autoPaymentWarning">
+              *ระบบจะทำการตัดชำระโดยอัตโนมัติ กรุณาเตรียม Sats ไว้ในกระเป๋า Wallet หากระบบไม่สามารถตัดชำระได้ สถานะสมาชิกจะสิ้นสุดลงโดยอัตโนมัติ
+            </label>
           </div>
 
           <button type="submit">submit</button>
