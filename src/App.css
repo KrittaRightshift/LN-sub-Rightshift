@@ -52,8 +52,9 @@
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
 }
 
 .form-group input {
@@ -62,6 +63,13 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.form-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
 button[type="submit"] {
