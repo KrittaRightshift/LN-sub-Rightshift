@@ -109,3 +109,22 @@ button[type="submit"]:hover {
 .discord-help-link:hover {
   color: #5b6eae;
 }
+
+
+.checkbox-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  margin: 0;
+}
+
