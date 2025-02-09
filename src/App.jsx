@@ -109,7 +109,7 @@ function App() {
             <small className="input-help">ไม่มี Nostr? ป้อน "-"</small>
           </div>
 
-          <div className="form-group">
+         <div className="checkbox-group">
             <input
               type="checkbox"
               id="autoPaymentWarning"
